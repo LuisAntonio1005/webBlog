@@ -1,0 +1,3 @@
+Pagina web echa solo por practica usando html y css.
+cabe resaltar que la informacion es de un blog informativo de mi hermano, 
+y la pagina fue echa con fines de entretenimiento.

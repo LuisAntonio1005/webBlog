@@ -1,0 +1,213 @@
+:root {
+    /*lo que usamos aqui es llamando custom properties lo que hace es crear varaiables en css sin 
+    necesidad de utilisar sass o les en la hoja de estilos */
+    --primario: #f41818;
+    --secundario: #ffc845;
+    --negro: #000000;
+    --claro: #ffffff;
+    --gris: #eeeeee;
+    --oscuro: #a42b2b;
+    --padding: 1rem;
+    --pading2: 2rem;
+}
+html{
+    box-sizing: border-box; /*borra los paddings*/
+}
+body{
+    
+   
+background-color:#eeeeee;
+background-attachment: fixed;
+background-size: cover;
+font-family: 'Roboto', sans-serif;
+}
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+h1,h2,h3,h4{
+    font-weight: 300;
+    margin: 1rem 0;
+}
+h1{
+    font-size: 2.4rem;
+}
+h2{
+    font-size: 2.2rem;
+}
+h3{
+    font-size: 2rem;
+}
+p {
+    line-height: 2rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.boton{
+    background-color: var(--primario); /*Color de el boton*/
+    display: block;/*el boton se adapta al contenedor*/
+    padding: var(--padding); /*Se le da la anchura al boton*/
+    text-align: center; /*Se alinea el texto*/
+    color: var(--claro); /*Se le asigna el color a la letra del boton*/
+    text-transform: uppercase;/*le da una mejor vista a la letra del boton*/
+    text-decoration: none;
+    border: 1px solid var(--primario); /*a la hora de darle clic al boton hace que  tenga un color de fonodo*/
+    transition: all .5se ease-in-out;
+}
+.boton:hover{
+    background-color: var(--claro);
+    color: var(--primario);
+   
+}
+/*header*/
+.header{
+    margin-top: 2rem;
+    background-color: var(--primario);
+    padding: var(--padding);
+}
+
+.header .barra{
+    display:grid;
+    grid-template-rows: repeat(2, auto);
+    grid-row-gap: 2rem;
+    justify-content: center;
+}
+.header .menu{
+    display: grid;
+    /*lo que hace la siguinte linea es crear las columnas y diseñarlas utomaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.header .menu a{
+    text-align: center;
+    color: var(--claro);
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 992px){
+    .header .barra{
+        grid-template-columns: 30% 1fr 30%; /* 30% de valor al logo 30% de valor a la nevegacion y la faccion es el restante */
+        justify-content: space-around; 
+        grid-template-rows: unset; /* en esta linea distriyulle el contendio con el unset*/
+
+    }
+    .header .menu{
+        grid-column:  3 / 4;
+        display: grid;
+        align-content: center;
+    }
+}
+
+/*nosotros*/
+
+.nosotros{
+    text-align: center;
+    margin-top: 2rem ; /* lo que hace en magin-top rem es separar los texto mediante uno quiera */
+}
+@media (min-width: 992px){
+    .nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2rem;
+        text-align: left;
+    }
+}
+.contenido-nosotros{
+    display: grid;
+    align-content: center;
+}
+/*venta*/
+
+.venta{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 1rem;
+}
+.venta img {
+    width: 100%;
+}
+.destacada {
+    grid-column: 1 / 3;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-gap: 1rem;
+}
+@media(min-width: 768px){
+    .venta{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+.card{
+    background-color: var(--claro);
+    padding: var(--padding);
+    border:1px solid rgb(199, 199, 199);
+}
+.card p{
+    font-size: .9rem;
+    line-height: 1.8rem;
+}
+.anuncio{
+    display: grid;
+}
+.anuncio .precio{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+.precio span{
+    font-weight: 300;
+    color: var(--primario);
+}
+
+/*footer*/
+
+.footer{
+    background-color: var(--primario);
+    margin-top: var(--pading2);
+    padding-top: var(--pading2);
+    color: var(--claro);
+
+}
+
+@media (min-width:768px){
+    .footer .contenedor {
+        display: grid;
+        grid-template-columns: 30% 20% 2fr;
+        grid-column-gap:2rem ;
+
+    }
+}
+    .footer .widget h3{
+        margin-bottom: 2rem;
+    }
+    .footer .navegacion a{
+        display: block;
+        color: var(--claro);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        text-decoration: none;
+    }
+    .footer .contenedor-casas{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 1rem;
+    }
+    .footer .casa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+    .footer.casa p{
+        margin: 0;
+    }
+    .copyrigth{
+        background-color: var(--oscuro);
+        margin: 3rem 0 0 0;
+        text-align:  center;
+        padding: var(--padding);
+    }
